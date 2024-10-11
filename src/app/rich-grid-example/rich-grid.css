@@ -1,0 +1,41 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between; /* Controls spacing between left and right sections */
+    align-items: center; /* Aligns all items in the center vertically */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.left-buttons {
+    display: flex;
+    flex-direction: row; /* Align buttons horizontally */
+    gap: 10px; /* Space between buttons horizontally */
+}
+
+.row-buttons {
+    display: flex;
+    gap: 10px; /* Space between Add Row and Delete Row buttons */
+}
+
+.quick-filter-section {
+    display: flex;
+    align-items: center;
+    margin-right: 280px; 
+    margin-top: 10px; /* Adjust space above the Quick Filter */
+}
+
+.right-buttons {
+    display: flex;
+    align-items: center; /* Align items in a row */
+}
+
+.download-options {
+    display: flex;
+    gap: 5px; /* Space between the download buttons */
+    font-size: 12px; /* Smaller font size for download options */
+    margin-left: 10px; /* Adjust the space between export and download options */
+}
+
+.download-options button {
+    padding: 2px 5px; /* Smaller padding for the buttons */
+}

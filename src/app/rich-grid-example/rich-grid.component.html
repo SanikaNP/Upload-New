@@ -1,0 +1,39 @@
+<div style="width: 100%; padding: 20px">
+    <h1>AG-GRID-ANGULAR</h1>
+    <div class="toolbar">
+        <div class="left-buttons">
+            <!-- Row buttons on the left -->
+            <button (click)="addRow()" class="btn btn-primary">Add Row</button>
+            <button (click)="delRow()" class="btn btn-primary">Delete Row</button>
+            <button (click)="this.api.selectAll()" class="btn btn-primary">Select All</button>
+            <button (click)="this.api.deselectAll()" class="btn btn-primary">Clear Selection</button>
+        </div>
+
+        <div class="quick-filter-section">
+            <label for="quickFilter">Quick Filter:&nbsp;</label>
+            <input (keyup)="onQuickFilterChanged($event)" type="text" id="quickFilter"
+                   placeholder="Type text to filter..." style="margin-right: 20px"/>
+        </div>
+
+        <div class="right-buttons">
+            <!-- Export button and download options -->
+            <button (click)="openDownloadOptions()" class="btn btn-primary">Export</button>
+            <div *ngIf="showDownloadOptions" class="download-options">
+                <button (click)="downloadJson()" class="btn btn-secondary">JSON</button>
+                <button (click)="downloadXlsx()" class="btn btn-secondary">XLSX</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AG Grid component -->
+    <ag-grid-angular
+        style="width: 100%; height: 650px;"
+        class="ag-theme-alpine"
+        [columnDefs]="columnDefs"
+        [rowData]="rowData"
+        [defaultColDef]="defaultColDef"
+        [modules]="modules"
+        [rowSelection]="'multiple'"
+        (gridReady)="onGridReady($event)">
+    </ag-grid-angular>
+</div>
